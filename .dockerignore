@@ -1,0 +1,4 @@
+.git
+data/app.sqlite*
+uploads/*.jpg
+README.md

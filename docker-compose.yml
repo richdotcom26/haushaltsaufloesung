@@ -1,0 +1,9 @@
+services:
+  haushaltsaufloesung:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8087:80"   # dein Reverse Proxy leitet haushaltsaufloesung.wuelbeck.de hierher
+    volumes:
+      - ./data:/var/www/html/data
+      - ./uploads:/var/www/html/uploads

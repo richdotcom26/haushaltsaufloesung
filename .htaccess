@@ -1,0 +1,15 @@
+Options -Indexes
+DirectoryIndex index.php
+
+<FilesMatch "^(config|lib)\.php$">
+  Require all denied
+</FilesMatch>
+<FilesMatch "^(Dockerfile|docker-compose\.yml|README\.md|\.user\.ini)$">
+  Require all denied
+</FilesMatch>
+
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "same-origin"
+  Header always set X-Robots-Tag "noindex, nofollow"
+</IfModule>
